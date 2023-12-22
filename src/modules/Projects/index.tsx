@@ -185,7 +185,6 @@ const Projects = () => {
                     Projects
                     <ProjectElement props={projectProps}/>
                 </Box>
-
             </Layout>
         </div>
     )

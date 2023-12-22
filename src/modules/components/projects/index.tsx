@@ -176,7 +176,7 @@ const ProjectElement = ({props}: {props: Props}) => {
                                         color: "#000",
                                     }}>
                                         {subButton.icon !== undefined ? <img src={subButton.icon} width="10px" alt={subButton.name}/> : ''}
-                                        <Link href={subButton.link} sx={{
+                                        <Link href={subButton.link} target="_blank" sx={{
                                             color: "#000",
                                             textDecoration: "none",
                                         }}>

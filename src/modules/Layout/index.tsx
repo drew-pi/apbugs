@@ -25,7 +25,14 @@ const Layout = ({ children }: LayoutProps) => {
         }}>
             <Header />
             <Navbar />
-            <Box sx={{width: "100%",overflowY: "scroll",display: "flex", flexDirection:"row"}}>{ children }</Box>
+            <Box sx={{
+                width: "100%",
+                overflowY: "scroll",
+                display: "flex", 
+                flexDirection:"row",
+                // margin: 2,
+                // marginTop: 4,
+                }}>{ children }</Box>
         </Box>
     )
 }
