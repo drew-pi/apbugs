@@ -1,10 +1,11 @@
-import { Box, Typography} from '@mui/material';
+import { Box, Link, Typography} from '@mui/material';
 import React from 'react';
 import Layout from '../Layout';
 
 import selfPhoto from "../../assets/imgs/photo.jpg";
-import moonIcon from "../../assets/icons/moon.svg";
-import sunIcon from "../../assets/icons/sun.svg";
+
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const AboutMe = () => {
     return (
@@ -45,9 +46,9 @@ const AboutMe = () => {
                             gap: 4,
                             justifyContent: "center",
                         }}>
-                            <img src={moonIcon} alt="Icon 1" width="20%"/>
-                            <img src={moonIcon} alt="Icon 1" width="20%"/>
-
+                            <Link href='https://www.linkedin.com/in/apbugs/' color="inherit" target="_blank"><LinkedInIcon fontSize='large'/></Link>
+                            <Link href='https://github.com/drew-pi' color="inherit" target="_blank"><GitHubIcon fontSize='large' /></Link>
+                        
                         </Box>
                     </Box>
                 </Box>
