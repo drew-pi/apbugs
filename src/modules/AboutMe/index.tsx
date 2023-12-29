@@ -1,4 +1,4 @@
-import { Box, Link, Typography} from '@mui/material';
+import { Box, Link, Paper, Typography} from '@mui/material';
 import React from 'react';
 import Layout from '../Layout';
 
@@ -10,27 +10,43 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 const AboutMe = () => {
     return (
         <Layout>
-            <Box sx={{
+            <Paper sx={{
                 display: "flex",
-                flexDirection: "row",
+                flexDirection: {
+                    lg: "row",
+                    xs: "column",
+                },
                 padding: 2,
                 paddingTop: 4,
-            }}>
+            }}
+            elevation={0}>
                 {/* Image and contact links */}
                 <Box sx={{
                     display: "flex",
                     flexDirection: "column",
-                    width: "35%",
+                    width: {
+                        lg: "35%",
+                        xs: "100%",
+                    }
                 }}>
                     <Box sx={{
-                        // display: "flex",
-                        // justifyContent: "center",
+                        alignContent: {
+                            xs: "center",
+                            lg: "left",
+                        },
+                        textAlign: {
+                            xs: "center",
+                            lg: "left",
+                        }
                     }}>
-                        <img src={selfPhoto} alt="photo of self" width="85%"/>
+                        <img src={selfPhoto} alt="andrew piatetsky" width="85%"/>
                     </Box>
 
                     <Box sx={{
-                        width: "85%",
+                        width: {
+                            lg: "85%",
+                            xs: "100%",
+                        },
                     }}>
                         <Box sx={{
                             display: "flex",
@@ -46,8 +62,8 @@ const AboutMe = () => {
                             gap: 4,
                             justifyContent: "center",
                         }}>
-                            <Link href='https://www.linkedin.com/in/apbugs/' color="inherit" target="_blank"><LinkedInIcon fontSize='large'/></Link>
-                            <Link href='https://github.com/drew-pi' color="inherit" target="_blank"><GitHubIcon fontSize='large' /></Link>
+                            <Link href='https://www.linkedin.com/in/apbugs/' color="primary" target="_blank"><LinkedInIcon fontSize='large'/></Link>
+                            <Link href='https://github.com/drew-pi' color="primary" target="_blank"><GitHubIcon fontSize='large' /></Link>
                         
                         </Box>
                     </Box>
@@ -55,7 +71,10 @@ const AboutMe = () => {
 
                 {/* Description/blurb */}    
                 <Box sx={{
-                    width: "65%",
+                    width: {
+                        lg: "65%",
+                        xs: "100%",
+                    },
                 }}>
                     <Typography>About Me</Typography>
                     <Typography sx={{paddingBottom: 3,}}>Godfather ipsum dolor sit amet. The hotel, the casino. The Corleone Family wants to buy you out. Leave the gun. Take the cannoli. Don Corleone, I am honored and grateful that you have invited me to your home on the wedding day of your daughter. And may their first child be a masculine child. Only don't tell me you're innocent. Because it insults my intelligence and makes me very angry.</Typography>
@@ -66,7 +85,7 @@ const AboutMe = () => {
 
 
 
-            </Box>
+            </Paper>
             
         </Layout>
     )

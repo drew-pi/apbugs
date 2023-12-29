@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { removeElement } from "../../assets/tools"
 import Layout from '../Layout';
-import FilterElement from '../components/filters';
+import FilterElement from '../../components/filters';
 
 import moonIcon from  "../../assets/icons/moon.svg"
-import ProjectElement from '../components/projects';
-import { Box } from '@mui/material';
+import ProjectElement from '../../components/projects';
+import { Paper } from '@mui/material';
 
 
 const filters = [
@@ -181,10 +181,10 @@ const Projects = () => {
         <div>
             <Layout>
                 <FilterElement props={filterProps}/>
-                <Box sx={{width: "100%",}}>
+                <Paper sx={{width: "100%",}} elevation={0}>
                     Projects
                     <ProjectElement props={projectProps}/>
-                </Box>
+                </Paper>
             </Layout>
         </div>
     )

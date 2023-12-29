@@ -1,4 +1,4 @@
-import { Box, Link, Typography, ButtonBase } from '@mui/material';
+import { Box, Link, Typography, ButtonBase, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles'
 import React, { useState } from 'react';
 
@@ -101,9 +101,7 @@ const ProjectElement = ({props}: {props: Props}) => {
 
 
     return (
-        <Box sx={{
-            // width: "max-content",
-        }}>
+        <Paper elevation={0}>
             {projects.map((item) => (
                 // <Box sx={{
                 //     border: "1px solid #000",
@@ -114,7 +112,7 @@ const ProjectElement = ({props}: {props: Props}) => {
                     <Box sx={{
                         display: "flex",
                         flexDirection: "column",
-                        border: "1px solid #000",
+                        border: "1px solid",
                         borderRadius: "15px",
                         boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
                         marginTop: 2,
@@ -168,18 +166,17 @@ const ProjectElement = ({props}: {props: Props}) => {
                             {item.links.map((subButton) => (
                                 <Box sx={{
                                     paddingRight: 2,
-                                }}>
+                                }} key={subButton.name}>
                                     <MoreDetailsButton  sx={{
                                         display: "flex",
                                         flexDirection: "row",
                                         textDecoration: "none",
-                                        color: "#000",
                                     }}>
                                         {subButton.icon !== undefined ? <img src={subButton.icon} width="10px" alt={subButton.name}/> : ''}
                                         <Link href={subButton.link} target="_blank" sx={{
-                                            color: "#000",
                                             textDecoration: "none",
-                                        }}>
+                                        }}
+                                        color="secondary">
                                             <Typography sx={{
                                                 fontSize:"95%",
                                             }}>{subButton.name}</Typography>
@@ -204,7 +201,7 @@ const ProjectElement = ({props}: {props: Props}) => {
                 // </Box>
             ))}
                 
-        </Box>
+        </Paper>
     )
 }
 

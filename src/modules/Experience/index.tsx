@@ -1,8 +1,8 @@
-import { Box } from '@mui/material';
+import { Paper} from '@mui/material';
 import React, { useState } from 'react';
 import { removeElement } from "../../assets/tools"
-import ExperienceElement from '../components/experience';
-import FilterElement from '../components/filters';
+import ExperienceElement from '../../components/experience';
+import FilterElement from '../../components/filters';
 import Layout from '../Layout';
 
 
@@ -76,11 +76,11 @@ const Experience = () => {
         // <FilterContextProvider>
             <Layout>
                 <FilterElement props={filterProps}/>
-                <Box>
+                <Paper elevation={0}>
                     Experience
                     <ExperienceElement props={experienceProps}/>
                     
-                </Box>
+                </Paper>
             </Layout>
         // </FilterContextProvider>
         

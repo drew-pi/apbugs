@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import React, { ReactNode } from 'react';
-import Navbar from '../components/navbar';
-import Header from '../components/header';
+import Navbar from '../../components/navbar';
+import Header from '../../components/header';
 
 interface LayoutProps {
     children : ReactNode;
@@ -10,13 +10,9 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
     return (
         <Box sx={{
-            backgroundColor: "#fffff",
-            // backgroundColor: "#3E3E3E",
+            // backgroundColor: "palette.background.default",
             display: "flex",
-            flexDirection: {
-                xs: "row",
-                lg: "column",
-            },
+            flexDirection: "column",
             color: "#000000",
             overflowY: "hidden",
             height: "100vh",

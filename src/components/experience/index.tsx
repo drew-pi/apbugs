@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Paper } from '@mui/material';
 import React from 'react';
 
 
@@ -47,17 +47,16 @@ interface Props {
 
 
 const ExperienceElement = ({props}: {props: Props}) => {
-
+    
     var {experiences, activeFilters } = props
 
     experiences = useFilterExperience({experiences}, activeFilters)
     // experiences.map((item) => console.log(item))
 
     return (
-        <Box>
+        <Paper elevation={0}>
             {experiences.map((item) => (
-                <Box sx={{
-                }}>
+                <Box key={item.name}>
                     <Box sx={{
                         display: "flex",
                         flexDirection: "row",
@@ -94,7 +93,7 @@ const ExperienceElement = ({props}: {props: Props}) => {
                     </Box>
                 </Box>
             ))}
-        </Box>
+        </Paper>
     )
 }
 
