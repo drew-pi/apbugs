@@ -1,6 +1,6 @@
 # Getting Started
 
-Copy the repository onto your device by running ```git clone git@github.com:drew-pi/Personal-Website.git apbugs```
+Copy the repository onto your device by running ```git clone git@github.com:drew-pi/apbugs.git```
 - If you do not specify the name apbugs, it will not work
 
 Then navigate your way into the local React app ```cd apbugs```
