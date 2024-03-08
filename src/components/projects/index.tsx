@@ -203,8 +203,8 @@ const ProjectElement = ({props}: {props: Props}) => {
 
                             </Box>
 
-
-                           <img src={item.img} alt={item.title} width="70%" height="auto" style={{objectFit: "contain",}}/>
+                            {item.img !== undefined ? <img src={item.img} alt={item.title} width="70%" height="auto" style={{objectFit: "contain",}}/> : ''}
+                           
                         </Box>
                     </Box>
 
