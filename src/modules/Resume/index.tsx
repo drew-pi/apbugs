@@ -1,6 +1,7 @@
 const Resume =  () => {
     return (
       <iframe 
+        title="resume document"
         src="https://docs.google.com/document/d/1zff_BkeAOApgThKRtx4otdQTnwjgXZrj/edit" 
         style={{width: '100%', height: '100vh'}}
       >

@@ -62,8 +62,8 @@ const AboutMe = () => {
                             gap: 4,
                             justifyContent: "center",
                         }}>
-                            <Link href='https://www.linkedin.com/in/apbugs/' color="primary" target="_blank"><LinkedInIcon fontSize='large'/></Link>
-                            <Link href='https://github.com/drew-pi' color="primary" target="_blank"><GitHubIcon fontSize='large' /></Link>
+                            <Link href='https://www.linkedin.com/in/apbugs/' color="primary" target="_blank" rel="noreferrer"><LinkedInIcon fontSize='large'/></Link>
+                            <Link href='https://github.com/drew-pi' color="primary" target="_blank" rel="noreferrer"><GitHubIcon fontSize='large' /></Link>
                         
                         </Box>
                     </Box>
@@ -77,7 +77,7 @@ const AboutMe = () => {
                     },
                 }}>
                     <Typography sx={{paddingBottom: 3,}}>
-                        I'm Andrew, a current student at Cornell University studying computer science and mathematics. In January I started working at <a target="_blank" href="https://sites.google.com/cornell.edu/sunnyjsh/people?authuser=0">Bio-Inspired Fluid Lab </a> with my mentor <a target="_blank" href='https://cals.cornell.edu/sunghwan-sunny-jung'>Dr. Sunghwan "Sunny" Jung </a>. Our focus is on creating computer vision models to track the growth of plants in hydroponic systems to study their efficiency. I am also an active member of the Cornell Competitive Coding team, gearing up for participation in next year's ACM competition.
+                        I'm Andrew, a current student at Cornell University studying computer science and mathematics. In January I started working at <a target="_blank" rel="noreferrer" href="https://sites.google.com/cornell.edu/sunnyjsh/people?authuser=0">Bio-Inspired Fluid Lab </a> with my mentor <a target="_blank" rel="noreferrer" href='https://cals.cornell.edu/sunghwan-sunny-jung'>Dr. Sunghwan "Sunny" Jung </a>. Our focus is on creating computer vision models to track the growth of plants in hydroponic systems to study their efficiency. I am also an active member of the Cornell Competitive Coding team, gearing up for participation in next year's ACM competition.
                     </Typography>
                     <Typography sx={{paddingBottom: 3,}}>
                         In my perspective, computer science and software engineering revolves around solving complex problems. This is the primary reason for my interest in various subfields within computer science, including Artificial Intelligence (AI), Machine Learning (ML), quantum computing, and cybersecurity. Additionally, I closely monitor developments in agritech and fintech, recognizing their potential to bring about revolutionary changes in our world. I am proficient in Python, Java, JavaScript/TypeScript (specifically React.js), OCaml, and tools such as Bash, Linux/Unix, and Git(Hub). I love exploring new programming languages and software packages, while also enhancing my knowledge of the tools I am already familiar with. 

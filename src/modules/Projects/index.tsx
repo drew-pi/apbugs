@@ -6,8 +6,6 @@ import FilterElement from '../../components/filters';
 import ProjectElement from '../../components/projects';
 import { Paper } from '@mui/material';
 
-import GitHubIcon from '@mui/icons-material/GitHub';
-
 import higherOrLower from "../../assets/imgs/projects/higher-or-lower.jpg"
 import macauProject from "../../assets/imgs/projects/macau-project.jpg";
 import plantsVsZombies from "../../assets/imgs/projects/plants-vs-zombies-project.jpg";

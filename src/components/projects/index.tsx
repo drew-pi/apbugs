@@ -1,7 +1,6 @@
 import { Box, Link, Typography, ButtonBase, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles'
 import React, { useState } from 'react';
-import { isTemplateMiddle } from 'typescript';
 
 
 type projectType = {
@@ -205,7 +204,7 @@ const ProjectElement = ({props}: {props: Props}) => {
                             </Box>
 
 
-                           <img src={item.img} width="70%" height="auto" style={{objectFit: "contain",}}/>
+                           <img src={item.img} alt={item.title} width="70%" height="auto" style={{objectFit: "contain",}}/>
                         </Box>
                     </Box>
 
