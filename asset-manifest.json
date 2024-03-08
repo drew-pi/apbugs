@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/apbugs/static/css/main.8a685450.css",
+    "main.js": "/apbugs/static/js/main.48b03746.js",
+    "static/media/demog-map.png": "/apbugs/static/media/demog-map.d11c2088081224007034.png",
+    "static/media/photo.jpg": "/apbugs/static/media/photo.586bfba3747182430128.jpg",
+    "static/media/higher-or-lower.jpg": "/apbugs/static/media/higher-or-lower.801ed1bd8daaf1e9c88d.jpg",
+    "static/media/macau-project.jpg": "/apbugs/static/media/macau-project.eab74c45ca7de4456642.jpg",
+    "static/media/plants-vs-zombies-project.jpg": "/apbugs/static/media/plants-vs-zombies-project.875592cf7c68e84a2e37.jpg",
+    "index.html": "/apbugs/index.html",
+    "main.8a685450.css.map": "/apbugs/static/css/main.8a685450.css.map",
+    "main.48b03746.js.map": "/apbugs/static/js/main.48b03746.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a685450.css",
+    "static/js/main.48b03746.js"
+  ]
+}
