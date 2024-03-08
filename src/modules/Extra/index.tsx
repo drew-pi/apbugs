@@ -7,7 +7,7 @@ const Extra = () => {
         <div>
             <Layout>
                 <Paper elevation={0}>
-                    Extra
+                    Coming Soon...
                 </Paper>
             </Layout>
         </div>

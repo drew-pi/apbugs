@@ -1,6 +1,7 @@
 import { Box, Link, Typography, ButtonBase, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles'
 import React, { useState } from 'react';
+import { isTemplateMiddle } from 'typescript';
 
 
 type projectType = {
@@ -14,8 +15,8 @@ type projectType = {
             name: string,
             link: string,
         }[],
-    description: string,
-    image?: string,
+    description: string[],
+    img?: string,
     tags: string[],
 }
 
@@ -116,7 +117,7 @@ const ProjectElement = ({props}: {props: Props}) => {
                         borderRadius: "15px",
                         boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
                         marginTop: 2,
-                    }}>
+                    }} key={item.id}>
                         {/* Box that includes the title and date, top of each card */}
                         <Box sx={{
                             paddingTop: 1,
@@ -190,10 +191,21 @@ const ProjectElement = ({props}: {props: Props}) => {
                             paddingLeft: 1,
                             paddingRight: 1, 
                             paddingBottom: 1,
+                            textAlign: "center",
                             // display: "none", 
                             display: hideDescriptionState[item.id] ? "none" : "block",
                         }}>
-                            <Typography>{item.description}</Typography>
+                            <Box sx={{
+                                textAlign: "left",
+                            }}>
+                                {item.description.map((paragraph) => (
+                                    <Typography key={paragraph} sx={{marginBottom: "1rem",}}>{paragraph}</Typography>
+                                ))}
+
+                            </Box>
+
+
+                           <img src={item.img} width="70%" height="auto" style={{objectFit: "contain",}}/>
                         </Box>
                     </Box>
 

@@ -76,10 +76,15 @@ const AboutMe = () => {
                         xs: "100%",
                     },
                 }}>
-                    <Typography>About Me</Typography>
-                    <Typography sx={{paddingBottom: 3,}}>Godfather ipsum dolor sit amet. The hotel, the casino. The Corleone Family wants to buy you out. Leave the gun. Take the cannoli. Don Corleone, I am honored and grateful that you have invited me to your home on the wedding day of your daughter. And may their first child be a masculine child. Only don't tell me you're innocent. Because it insults my intelligence and makes me very angry.</Typography>
-                    <Typography sx={{paddingBottom: 3,}}>That's my family Kay, that's not me. I see you took the name of the town. What was your father's name? I am sorry. What happened to your father was business. I have much respect for your father. But your father, his thinking is old-fashioned. You must understand why I had to do that. Now let's work through where we go from here. Vito, how do you like my little angel? Isn't she beautiful? I'm your older brother, Mike, and I was stepped</Typography>
-                    <Typography sx={{paddingBottom: 3,}}>I'm gonna make him an offer he can't refuse. I want your answer and the money by noon tomorrow. And one more thing. Don't you contact me again, ever. From now on, you deal with Turnbull. What's the matter with you? Is this what you've become, a Hollywood finocchio who cries like a woman? "Oh, what do I do? What do I do?" What is that nonsense? Ridiculous! Why do you hurt me, Michael? I've always been loyal to you. My father's name was Antonio Andolini... and this is for you</Typography>
+                    <Typography sx={{paddingBottom: 3,}}>
+                        I'm Andrew, a current student at Cornell University studying computer science and mathematics. In January I started working at <a target="_blank" href="https://sites.google.com/cornell.edu/sunnyjsh/people?authuser=0">Bio-Inspired Fluid Lab </a> with my mentor <a target="_blank" href='https://cals.cornell.edu/sunghwan-sunny-jung'>Dr. Sunghwan "Sunny" Jung </a>. Our focus is on creating computer vision models to track the growth of plants in hydroponic systems to study their efficiency. I am also an active member of the Cornell Competitive Coding team, gearing up for participation in next year's ACM competition.
+                    </Typography>
+                    <Typography sx={{paddingBottom: 3,}}>
+                        In my perspective, computer science and software engineering revolves around solving complex problems. This is the primary reason for my interest in various subfields within computer science, including Artificial Intelligence (AI), Machine Learning (ML), quantum computing, and cybersecurity. Additionally, I closely monitor developments in agritech and fintech, recognizing their potential to bring about revolutionary changes in our world. I am proficient in Python, Java, JavaScript/TypeScript (specifically React.js), OCaml, and tools such as Bash, Linux/Unix, and Git(Hub). I love exploring new programming languages and software packages, while also enhancing my knowledge of the tools I am already familiar with. 
+                    </Typography>
+                    <Typography sx={{paddingBottom: 3,}}>
+                    Outside of my love of computer science and math, I am an avid hiker, skier, and basketball player (despite my average skills). In highschool and middle school, I ran cross country. In college, I run recreationally in the beautiful hills of Ithaca. I also enjoy reading and going to the opera with my family and friends. I am also trilingual - fluent in English and Russian and advanced in French. 
+                    </Typography>
                 </Box>
 
 

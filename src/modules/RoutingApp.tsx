@@ -5,6 +5,7 @@ import Error from "./Error";
 import Experience from "./Experience";
 import Extra from "./Extra";
 import Projects from "./Projects";
+import Resume from "./Resume";
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,12 @@ const router = createBrowserRouter([
         element: <Extra/>,
         errorElement: <Error />,
     },
+    {
+        path: "resume",
+        element: <Resume />,
+        errorElement: <Error />
+
+    }
 ])
 const RoutingApp = () => {
     return <RouterProvider router={router} />;
