@@ -1,32 +1,54 @@
-# Getting Started
+# Astro Starter Kit: Basics
 
-Copy the repository onto your device by running ```git clone git@github.com:drew-pi/apbugs.git```
-- If you do not specify the name apbugs, it will not work
+```sh
+npm create astro@latest -- --template basics
+```
 
-Then navigate your way into the local React app ```cd apbugs```
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-Then install all of the requirements with ```npm install```
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-Then start the react app on your local server at http://localhost:3000/ by running ```npm start```
+![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
-# Sources
+## 🚀 Project Structure
 
-Themes
- - https://www.youtube.com/watch?v=Ak8ioaciYQY
- - https://mui.com/material-ui/customization/theming/
- - https://zenoo.github.io/mui-theme-creator/
+Inside of your Astro project, you'll see the following folders and files:
 
- Color Science
- - https://imagecolorpicker.com/color-code
- - 
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-General React Resources
- - https://www.youtube.com/watch?v=uGnh1NnlEbQ&t=219s
- 
-Icons
- - https://mui.com/material-ui/material-icons/
- - 
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-Website Inspiration
- - https://acamedia.uk/personal-academic-websites/9-great-personal-academic-website-examples/
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
