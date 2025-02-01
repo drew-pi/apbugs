@@ -1,0 +1,14 @@
+p {
+    padding: 0;
+    margin: 0;  
+}
+
+
+.proj-list-item-div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
