@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
-import { ProjectListItemProp } from '@app/compontents/ProjectList';
+import { ProjectListItemProp } from '@src/app/compontents/main/ProjectList';
 import { loadAll } from '@projects/loader';
 
 import "@app/project-homepage.css";
@@ -20,8 +20,12 @@ const ProjectHomepage: React.FC = () => {
 
             {projects.map(({slug, meta}) => (
                 <div key={slug} className='project-container-div'>
+                    
+                    <div className='project-top-info'>
+                        <h3 className='project-title'>{meta.title}</h3>
+                        <i>{meta.date || 1724}</i>
+                    </div>
 
-                    <h3 className='project-title'>{meta.title}</h3>
                     <p>{meta.description}</p>
 
                     <div className='project-links'>

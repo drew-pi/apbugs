@@ -1,7 +1,9 @@
-import ProjectList from '@app/compontents/ProjectList';
-import Blurb from '@app/compontents/Blurb';
+import ProjectList from '@src/app/compontents/main/ProjectList';
+import Blurb from '@src/app/compontents/main/Blurb';
 
-import './main.css';
+import Experience from '@app/compontents/main/Experience';
+
+import '@app/compontents/main/main.css';
 
 export interface MainProps {
     id: string,
@@ -11,7 +13,8 @@ export default function Main() {
     return (
         <div className='main-div'>
             <Blurb id={'page-1'} />
-            <ProjectList id={'page-2'} />
+            <Experience id={'page-2'} />
+            <ProjectList id={'page-3'} />
         </div>
     )
 }

@@ -10,30 +10,48 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeRaw from "rehype-raw";
 
-import { loader } from "@projects/loader.ts";
+import { loader, ProjectMetadata } from "@projects/loader.ts";
+
+import "./project.css";
+
+// forces all project images to be loaded (because Vite is supposed to SPA, but using dynamic pages)
+import.meta.glob("/src/assets/*", { eager: true });
 
 
 const Project = () => {
 
     const { name } = useParams<string>();
     const [markdown, setMarkdown] = useState<string | null>(null);
+    const [frontMatter, setFrontMatter] = useState<ProjectMetadata | null>(null);
+
 
     useEffect(() => {
         loader(name as string).then((md: string | null) => {
             if (md) {
                 
-                const { content } = matter(md);
+                const { content, data } = matter(md);
                 setMarkdown(() => content);
+                setFrontMatter(() => data as ProjectMetadata);
+
+                console.log("data.tools", data.tools);
+
             } else {
                 setMarkdown("## file does not exist ");
             }
         });
     }, [name]);
 
-    console.log(name);
-
     return (
-        <div>
+        <div className="project-div">
+            
+            <img src={frontMatter?.img} alt={frontMatter?.img_alt} className="project-img"/>
+
+            <div className="matter-info">
+                <h1>{frontMatter?.title}</h1>
+                <p>Tools used: {frontMatter?.tools?.join(", ") || "All of them :)"}</p>
+                <i>{frontMatter?.date}</i>
+            </div>
+
             {markdown ? (
                 <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
