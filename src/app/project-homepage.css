@@ -1,0 +1,38 @@
+.project-homepage-div {
+    align-items: center;
+    gap: 1rem; 
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.5;
+
+    padding-left: 5rem;
+    padding-right:5rem;
+
+    text-align: left;
+}
+
+.project-homepage-div > div {
+    border-bottom: 1px solid #ccc; /* Separator line */
+}
+
+.project-homepage-div > div:last-child {
+    border-bottom: none; /* Removes line from the last element */
+}
+
+.project-container-div {
+    width: 100%;
+}
+
+h3.project-title {
+    padding-bottom: 0.5rem;
+    margin: 0;
+}
+
+.top-text {
+    padding-bottom: 2rem;
+}
+
+.learn-more-link {
+    color: black;
+}

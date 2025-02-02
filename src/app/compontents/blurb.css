@@ -1,0 +1,34 @@
+div.blurb-div {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    scroll-snap-align: start;
+}
+
+.blurb-img {
+    max-width: 200px;
+    /* border-radius: 50%; */
+}
+
+.intro-div {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.intro-text-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: none;
+    margin: 0.3rem;
+}

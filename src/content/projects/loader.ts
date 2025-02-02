@@ -32,7 +32,7 @@ type LoadAll = {
 }[]
 
 
-export async function loadAll(): Promise<LoadAll> {
+export async function loadAll(limit?: number): Promise<LoadAll> {
     const projects = Object.entries(rawProjects);
     const projectList: { slug: string; meta: ProjectMetadata }[] = [];
 
@@ -45,7 +45,9 @@ export async function loadAll(): Promise<LoadAll> {
         projectList.push({ slug, meta: data as ProjectMetadata });
     }
 
-    return projectList;
+    return projectList.sort((a, b) => {
+        return Number(b.meta.date ?? 0) -  Number(a.meta.date ?? 0)
+    }).slice(0,limit ?? projectList.length);
 
 
 
