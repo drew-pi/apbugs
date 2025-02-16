@@ -1,0 +1,24 @@
+---
+import * as blurb from '@content/blurb.md';
+import "@styles/main.css";
+
+---
+
+
+
+<div class='main-sections main-centered-sections' id="page-1">
+
+    <div class='intro-div'>
+        <div class='intro-text-div'>
+            <h1>{blurb.frontmatter.h1}</h1>
+            <h3>{blurb.frontmatter.h3}</h3>
+        </div>
+
+
+        <img src={blurb.frontmatter.img} alt={blurb.frontmatter.img_alt} class='blurb-img'/>
+    </div>
+
+    <blurb.Content />
+
+    <a href="#page-2" class='switch-page page-down'>↓</a>
+</div>

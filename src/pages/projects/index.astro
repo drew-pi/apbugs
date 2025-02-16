@@ -1,0 +1,89 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
+
+
+const projects = await getCollection('projects')
+projects.sort((a, b) => Number(b.data.date ?? 0) -  Number(a.data.date ?? 0));
+---
+
+<Layout>
+  <div class='project-homepage-div'>
+    <h1 class='top-text'>Projects</h1>
+
+    {projects.map((project: CollectionEntry<'projects'>) => (
+        <div class='project-container-div'>
+            
+            <div class='project-top-info'>
+                <h3 class='project-title'>{project.data.title}</h3>
+                <i>{project.data.date || 1724}</i>
+            </div>
+
+            <p>{project.data.description}</p>
+
+            <div class='project-links'>
+                <span>[<a href={project.data.github} target="_blank" rel="noopener noreferrer">GitHub</a>]</span>
+                {project.data.links?.map(({display_name, link}) => (
+                    <span>[<a href={link} target="_blank" rel="noopener noreferrer">{display_name}</a>]</span>
+                ))}
+            </div>
+
+            <a href={`/projects/${project.id}`} class='learn-more-link'>Learn More</a>
+
+      </div>
+
+    ))}
+  </div>
+</Layout>
+
+<style>
+.project-homepage-div {
+    align-items: center;
+    gap: 1rem; 
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.5;
+
+    padding-left: 5rem;
+    padding-right:5rem;
+    padding-bottom: 5rem;
+
+    text-align: left;
+}
+
+.project-homepage-div > div {
+    border-bottom: 1px solid #ccc; /* Separator line */
+}
+
+.project-homepage-div > div:last-child {
+    border-bottom: none; /* Removes line from the last element */
+}
+
+.project-container-div {
+    width: 100%;
+}
+
+h3.project-title {
+    padding-bottom: 0.1rem;
+    margin: 0;
+}
+
+.project-top-info {
+    margin-bottom: 0.5rem;
+}
+
+.top-text {
+    padding-bottom: 2rem;
+}
+
+.learn-more-link {
+    color: black;
+}
+
+.project-links {
+    padding-top: 0.5rem;
+    padding-bottom: 0.3rem;
+}
+
+</style>

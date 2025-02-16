@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectListItem from './ProjectListItem';
+import "@styles/main.css";
+
+
+const limit = 5;
+
+const projects = await getCollection('projects')
+projects.sort((a, b) => Number(b.data.date ?? 0) -  Number(a.data.date ?? 0)).slice(0, limit);
+
+---
+
+<div class="main-sections main-centered-sections" id="page-3">
+
+    <a href="#page-2" class="switch-page page-up">↑</a>
+
+    <h1>Projects</h1>
+    <ul>
+        {projects.map((project) => (
+            <ProjectListItem slug={project.id} meta={project.data}/>
+        ))}
+    </ul>
+
+    <a class="show-more" href=`/projects`>Show More</a>
+
+</div>

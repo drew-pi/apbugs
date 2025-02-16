@@ -1,0 +1,62 @@
+---
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const projects = await getCollection('projects');
+
+    return projects.map((project) => ({
+        params: { id: project.id },
+        props: { project }
+    }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<div class="project-div">
+            
+    <!-- {project.data?.img &&
+    (<Image 
+        src={project.data.img} 
+        alt={project.data.img_alt || "No description available"} 
+        class="project-img"
+    />)
+    } -->
+    <img src={project.data?.img} alt={project.data?.img_alt} class="project-img"/>
+
+
+    <div class="matter-info">
+        <h1>{project.data?.title}</h1>
+        <p>Tools used: {project.data?.tools?.join(", ") || "All of them :)"}</p>
+        <i>{project.data?.date}</i>
+    </div>
+
+    <Content />
+</div>
+
+<style>
+.project-div {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%; 
+    margin: 0 auto; /* Centers the div horizontally */
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 5rem; /*Add a bit of space on the bottom*/
+    gap: 0.3rem;
+}
+
+.project-img {
+    max-height: 25rem;
+    align-self: center;
+    padding: 2rem;
+}
+
+.matter-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-bottom: 0.5rem;
+}
+</style>
