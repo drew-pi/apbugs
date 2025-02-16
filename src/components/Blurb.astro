@@ -1,6 +1,9 @@
 ---
-import * as blurb from '@content/blurb.md';
+import * as blurb from '@content/blurb.md' as MarkdownContent;
+
 import "@styles/main.css";
+
+const base = import.meta.env.BASE_URL;
 
 ---
 
@@ -12,13 +15,20 @@ import "@styles/main.css";
         <div class='intro-text-div'>
             <h1>{blurb.frontmatter.h1}</h1>
             <h3>{blurb.frontmatter.h3}</h3>
+
+            <div class="link-icons-div">
+                <a href={blurb.frontmatter.github} target="_blank" rel="noopener noreferrer"><img src='public/icons/github.svg' class="link-icons" /></a>
+                <a href={blurb.frontmatter.linkedin} target="_blank" rel="noopener noreferrer"><img src="public/icons/linkedin.svg" class="link-icons" /></a>
+            </div>
         </div>
 
 
-        <img src={blurb.frontmatter.img} alt={blurb.frontmatter.img_alt} class='blurb-img'/>
+        <img src={`${base}${blurb.frontmatter.img}`} alt={blurb.frontmatter.img_alt} class='blurb-img'/>
     </div>
 
     <blurb.Content />
+
+    <p class="blurb-contact">Feel feel to contact me at: <span class="blurb-email">{blurb.frontmatter.email}</span></p>
 
     <a href="#page-2" class='switch-page page-down'>↓</a>
 </div>

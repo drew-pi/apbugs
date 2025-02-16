@@ -84,6 +84,24 @@ div.main-div {
     text-align: center;
 }
 
+.link-icons-div {
+    display: flex;
+    flex-direction: row;
+    padding-top: 0.5rem;
+    gap: 1.5rem;
+}
+
+.link-icons {
+    max-height: 2rem;
+}
+
+.blurb-email {
+    color: #c56b3b;
+}
+
+.blurb-contact {
+    margin-top: 3rem;
+}
 /*-----------------*/
 
 

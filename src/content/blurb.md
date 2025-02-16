@@ -1,6 +1,9 @@
 ---
 h1: Hi, I'm Andrew
 h3: I am a Software Engineer
+github: https://github.com/drew-pi
+linkedin: https://www.linkedin.com/in/apbugs/
+email: ap2356 [at] cornell [dot] edu
 img: /headshot.png
 img_alt: Andrew Piatetsky graduation photo
 ---

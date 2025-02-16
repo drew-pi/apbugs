@@ -2,6 +2,8 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 
+const base = import.meta.env.BASE_URL;
+
 
 const projects = await getCollection('projects')
 projects.sort((a, b) => Number(b.data.date ?? 0) -  Number(a.data.date ?? 0));
@@ -22,13 +24,13 @@ projects.sort((a, b) => Number(b.data.date ?? 0) -  Number(a.data.date ?? 0));
             <p>{project.data.description}</p>
 
             <div class='project-links'>
-                <span>[<a href={project.data.github} target="_blank" rel="noopener noreferrer">GitHub</a>]</span>
+                <span>[<a href={`${base}${project.data.github}`} target="_blank" rel="noopener noreferrer">GitHub</a>]</span>
                 {project.data.links?.map(({display_name, link}) => (
-                    <span>[<a href={link} target="_blank" rel="noopener noreferrer">{display_name}</a>]</span>
+                    <span>[<a href={`${base}${link}`} target="_blank" rel="noopener noreferrer">{display_name}</a>]</span>
                 ))}
             </div>
 
-            <a href={`/projects/${project.id}`} class='learn-more-link'>Learn More</a>
+            <a href={`${base}/projects/${project.id}`} class='learn-more-link'>Learn More</a>
 
       </div>
 

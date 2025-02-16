@@ -2,12 +2,13 @@ import type { InferEntrySchema } from "astro:content";
 import "@styles/main.css";
 
 type ProjectListItemProp = { 
+    base: string,
     slug: string; 
     meta: InferEntrySchema<"projects">;
 }
 
 
-export default function ProjectListItem({slug, meta}: ProjectListItemProp) {
+export default function ProjectListItem({base, slug, meta}: ProjectListItemProp) {
     return (
         <div className="proj-list-item-div">
             
@@ -22,7 +23,7 @@ export default function ProjectListItem({slug, meta}: ProjectListItemProp) {
                 <span key={link}>[<a href={link} target="_blank" rel="noopener noreferrer">{display_name}</a>]</span>
             ))}
 
-            <span>[<a href={`/projects/${slug}`}>More Info</a>]</span>
+            <span>[<a href={`${base}/projects/${slug}`}>More Info</a>]</span>
         </div>
     )
 }
