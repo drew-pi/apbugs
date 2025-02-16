@@ -8,5 +8,6 @@ import react from '@astrojs/react';
 export default defineConfig({
   site: 'https://drew-pi.github.io/',
   base: 'apbugs',
+  output: 'static',
   integrations: [react()]
 });
