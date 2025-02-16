@@ -17,8 +17,8 @@ const base = import.meta.env.BASE_URL;
             <h3>{blurb.frontmatter.h3}</h3>
 
             <div class="link-icons-div">
-                <a href={blurb.frontmatter.github} target="_blank" rel="noopener noreferrer"><img src='public/icons/github.svg' class="link-icons" /></a>
-                <a href={blurb.frontmatter.linkedin} target="_blank" rel="noopener noreferrer"><img src="public/icons/linkedin.svg" class="link-icons" /></a>
+                <a href={blurb.frontmatter.github} target="_blank" rel="noopener noreferrer"><img src=`${base}/icons/github.svg` class="link-icons" /></a>
+                <a href={blurb.frontmatter.linkedin} target="_blank" rel="noopener noreferrer"><img src=`${base}/icons/linkedin.svg` class="link-icons" /></a>
             </div>
         </div>
 
