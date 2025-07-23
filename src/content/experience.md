@@ -1,6 +1,8 @@
-_Jan 2024_: Joined [Engineers for a Sustainable World](https://esw.engineering.cornell.edu/index.html) (ESW) hydroponics subteam working on agritech and vertical farming as a Software Engineer
+_June 2025_: Joined [Quantori](https://quantori.com/) as a Software Engineer Intern working on biotech LLM agents and validation
 
 _May 2024_: Continued my work at [Trillium Trading](https://www.trlm.com/) as a Software Engineer Intern working on the internal knowledge base
+
+_Jan 2024_: Joined [Engineers for a Sustainable World](https://esw.engineering.cornell.edu/index.html) (ESW) hydroponics subteam working on agritech and vertical farming as a Software and ML Engineer
 
 _May 2023_: Started at [Trillium Trading](https://www.trlm.com/) as a Software Engineer Intern working on the Experience Team
 
