@@ -7,6 +7,7 @@ email: ap2356 [at] cornell [dot] edu
 img: /headshot.png
 img_alt: Andrew Piatetsky graduation photo
 ---
+
 Currently an undergraduate student at Cornell pursuing a double major in Computer Science and Math.
 
 <br>

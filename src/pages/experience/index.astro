@@ -1,0 +1,103 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL;
+
+
+const experiences = await getCollection('experience')
+experiences.sort((a, b) => Number(b.data.end_date ?? Number.POSITIVE_INFINITY) -  Number(a.data.end_date ?? Number.POSITIVE_INFINITY));
+---
+
+<Layout>
+  <div class='experience-homepage-div'>
+    <h1 class='top-text'>Previous Experiences</h1>
+
+    {experiences.map((experience: CollectionEntry<'experience'>) => (
+        <div class='experience-container-div'>
+            
+            <div class='experience-top-info'>
+                <h3 class='experience-title'><b>{experience.data.job_title}</b> at <a href={experience.data.company_link}>{experience.data.company_name}</a></h3>
+                <i>{experience.data.location} ({experience.data.start_date.toLocaleDateString("en-US", {
+                                                                                                        month: "long",
+                                                                                                        year: "numeric",
+                                                                                                        timeZone: "UTC",
+                                                                                                        }
+                                                                                            )
+                                                } - {experience.data.end_date?.toLocaleDateString("en-US", {
+                                                                                                        month: "long",
+                                                                                                        year: "numeric",
+                                                                                                        timeZone: "UTC",
+                                                                                                        }
+                                                                                                ) ?? "Ongoing"})
+                </i>
+            </div>
+
+            <p>{experience.data.description}</p>
+
+            <div class='experience-links'>
+                {experience.data.links?.map(({display_name, link}) => (
+                    <span>[<a href={`${base}${link}`} target="_blank" rel="noopener noreferrer">{display_name}</a>]</span>
+                ))}
+            </div>
+
+            <a href={`${base}/experience/${experience.id}`} class='learn-more-link'>Learn More</a>
+
+      </div>
+
+    ))}
+  </div>
+</Layout>
+
+<style>
+.experience-homepage-div {
+    align-items: center;
+    gap: 1rem; 
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.5;
+
+    padding-left: 5rem;
+    padding-right:5rem;
+
+    text-align: left;
+}
+
+.experience-homepage-div > div {
+    border-bottom: 1px solid #ccc; /* Separator line */
+    padding-bottom: 1.5rem;
+
+}
+
+.experience-homepage-div > div:last-child {
+    border-bottom: none; /* Removes line from the last element */
+}
+
+.experience-container-div {
+    width: 100%;
+}
+
+h3.experience-title {
+    padding-bottom: 0.1rem;
+    margin: 0;
+}
+
+.experience-top-info {
+    margin-bottom: 0.5rem;
+}
+
+.top-text {
+    padding-bottom: 2rem;
+}
+
+.learn-more-link {
+    color: black;
+}
+
+.experience-links {
+    padding-top: 0.5rem;
+    padding-bottom: 0.3rem;
+}
+
+</style>

@@ -2,6 +2,8 @@
 import * as experience from '@content/experience.md';
 import "@styles/main.css";
 
+const base = import.meta.env.BASE_URL;
+
 ---
 
 
@@ -11,6 +13,19 @@ import "@styles/main.css";
 
     <experience.Content />
 
+    <a class="centered show-more" href=`${base}/experience`>Learn More</a>
+
     <a href="#page-3" class="switch-page page-down">↓</a>
 
 </div>
+
+
+<style>
+
+.centered {
+    align-items: center;
+    text-align: center;
+}
+
+
+</style>

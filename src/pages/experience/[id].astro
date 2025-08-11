@@ -1,0 +1,69 @@
+---
+import ContentLayout from '@layouts/ContentLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+const base = import.meta.env.BASE_URL;
+
+export async function getStaticPaths() {
+    const experiences = await getCollection('experience');
+
+    return experiences.map((experience) => ({
+        params: { id: experience.id },
+        props: { experience }
+    }));
+}
+
+const { experience } = Astro.props;
+const { Content } = await render(experience);
+---
+
+<ContentLayout>
+    <div class="project-div">
+
+        <div class="matter-info">
+            <h1>{experience.data?.job_title} at {experience.data.company_name}</h1>
+            <p>Tools used: {experience.data?.tools?.join(", ") || "All of them :)"}</p>
+            <i>{experience.data.location} ({experience.data.start_date.toLocaleDateString("en-US", {
+                                                                                                    month: "long",
+                                                                                                    year: "numeric",
+                                                                                                    timeZone: "UTC",
+                                                                                                    }
+                                                                                        )
+                                            } - {experience.data.end_date?.toLocaleDateString("en-US", {
+                                                                                                    month: "long",
+                                                                                                    year: "numeric",
+                                                                                                    timeZone: "UTC",
+                                                                                                    }
+                                                                                            ) ?? "Ongoing"})
+            </i>
+        </div>
+
+        <Content />
+    </div>
+</ContentLayout>
+
+<style>
+.project-div {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%; 
+    margin: 0 auto; /* Centers the div horizontally */
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 5rem; /*Add a bit of space on the bottom*/
+    gap: 0.3rem;
+}
+
+.project-img {
+    max-height: 25rem;
+    align-self: center;
+    padding: 2rem;
+}
+
+.matter-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-bottom: 0.5rem;
+}
+</style>

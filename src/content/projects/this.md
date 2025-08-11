@@ -3,15 +3,13 @@ title: This Website
 description: Simple and Efficient portfolio site boostrapped with Vite, TS, and React.
 github: https://github.com/drew-pi/apbugs
 links:
-    # - display_name: 
-    #   link: 
-    # - display_name:
-    #   link:
-img: 
-img_alt: 
+  # - display_name:
+  #   link:
+  # - display_name:
+  #   link:
 tags: [frontend]
-tools: [Vite, TypeScript, React, MDX, HTML, CSS]
-date: 
+tools: [Astro.js, TypeScript, React, MDX, HTML, CSS]
+date:
 ---
 
 This is my website!
