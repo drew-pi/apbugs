@@ -41,7 +41,7 @@ tools:
 
 <figure>
   <p align="center">
-    <img src="/public/assets/experience/trillium/gala.jpg" alt="" height="500" style="display:block; margin:0 auto; padding:5px; box-sizing:border-box;">
+    <img src="/apbugs/assets/experience/trillium/gala.jpg" alt="" height="500" style="display:block; margin:0 auto; padding:5px; box-sizing:border-box;">
   </p>
   <figcaption style="text-align:center; font-style:italic;">The manager of the Knowledge Base team, John Heffernan, and I at the end-of-year Trillium Gala, January 2024</figcaption>
 </figure>

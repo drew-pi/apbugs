@@ -40,7 +40,7 @@ tools:
 
 <figure>
   <p align="center">
-    <img src="/public/assets/experience/canopy-dash/overhead.png" alt="" height="300" style="display:block; margin:0 auto; padding:5px; box-sizing:border-box;">
+    <img src="/apbugs/assets/experience/canopy-dash/overhead.png" alt="" height="300" style="display:block; margin:0 auto; padding:5px; box-sizing:border-box;">
   </p>
   <figcaption style="text-align:center; font-style:italic;">Overhead view of basil plants</figcaption>
 </figure>

@@ -28,7 +28,7 @@ tools:
 
 <figure>
   <p align="center">
-    <img src="/public/assets/experience/3d-modelling/manual.png" alt="" height="300" style="display:block; margin:0 auto; padding:5px; box-sizing:border-box;">
+    <img src="/apbugs/assets/experience/3d-modelling/manual.png" alt="" height="300" style="display:block; margin:0 auto; padding:5px; box-sizing:border-box;">
   </p>
   <figcaption style="text-align:center; font-style:italic;">3D reconstruction done manually using smartphone to capture continous video</figcaption>
 </figure>
@@ -53,10 +53,10 @@ Below I have included a gallery of the images associated with this project
 
 <figure>   
   <p align="center">     
-    <img src="/public/assets/experience/3d-modelling/trial.png" width="800" style="display:block; margin:0 auto; padding:5px; box-sizing:border-box;">     
+    <img src="/apbugs/assets/experience/3d-modelling/trial.png" width="800" style="display:block; margin:0 auto; padding:5px; box-sizing:border-box;">     
     <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; box-sizing:border-box;">       
-      <img src="/public/assets/experience/3d-modelling/side_graph.png" width="800" style="max-width:33%; padding:5px; box-sizing:border-box;">       
-      <img src="/public/assets/experience/3d-modelling/angled_graph.png" width="800" style="max-width:33%; padding:5px; box-sizing:border-box;">     
+      <img src="/apbugs/assets/experience/3d-modelling/side_graph.png" width="800" style="max-width:33%; padding:5px; box-sizing:border-box;">       
+      <img src="/apbugs/assets/experience/3d-modelling/angled_graph.png" width="800" style="max-width:33%; padding:5px; box-sizing:border-box;">     
     </div>  
   </p>   
   <figcaption style="text-align:center; font-style:italic;">Live capture of basil with leaf area estimate from two different angles</figcaption> 
@@ -67,9 +67,9 @@ Before building a track system to rotate the camera around the plant, we experim
 <figure>     
   <p align="center">         
     <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; box-sizing:border-box;">         
-      <img src="/public/assets/experience/3d-modelling/seg1.png" alt="" width="800" style="max-width:32%; padding:5px; box-sizing:border-box;">         
-      <img src="/public/assets/experience/3d-modelling/seg2.png" alt="" width="800" style="max-width:32%; padding:5px; box-sizing:border-box;">        
-      <img src="/public/assets/experience/3d-modelling/seg3.png" alt="" width="800" style="max-width:32%; padding:5px; box-sizing:border-box;">         
+      <img src="/apbugs/assets/experience/3d-modelling/seg1.png" alt="" width="800" style="max-width:32%; padding:5px; box-sizing:border-box;">         
+      <img src="/apbugs/assets/experience/3d-modelling/seg2.png" alt="" width="800" style="max-width:32%; padding:5px; box-sizing:border-box;">        
+      <img src="/apbugs/assets/experience/3d-modelling/seg3.png" alt="" width="800" style="max-width:32%; padding:5px; box-sizing:border-box;">         
     </div>     
   </p>     
   <figcaption style="text-align:center; font-style:italic;">2D Leaf segmentation</figcaption> 
@@ -78,8 +78,8 @@ Before building a track system to rotate the camera around the plant, we experim
 <figure>     
   <p align="center">         
     <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; box-sizing:border-box;">         
-      <img src="/public/assets/experience/3d-modelling/watershed.png" alt="Alt text" width="800" style="max-width:40%; padding:5px; box-sizing:border-box;">         
-      <img src="/public/assets/experience/3d-modelling/skeletonize.png" alt="Alt text" width="800" style="max-width:40%; padding:5px; box-sizing:border-box;">        
+      <img src="/apbugs/assets/experience/3d-modelling/watershed.png" alt="Alt text" width="800" style="max-width:40%; padding:5px; box-sizing:border-box;">         
+      <img src="/apbugs/assets/experience/3d-modelling/skeletonize.png" alt="Alt text" width="800" style="max-width:40%; padding:5px; box-sizing:border-box;">        
     </div>     
   </p>     
   <figcaption style="text-align:center; font-style:italic;">3D computer vision techniques applied</figcaption> 
@@ -87,7 +87,7 @@ Before building a track system to rotate the camera around the plant, we experim
 
 <figure>   
   <p align="center">     
-    <img src="/public/assets/experience/3d-modelling/leaf_count.png" alt="" height="300" style="display:block; margin:0 auto; padding:5px; box-sizing:border-box;">   
+    <img src="/apbugs/assets/experience/3d-modelling/leaf_count.png" alt="" height="300" style="display:block; margin:0 auto; padding:5px; box-sizing:border-box;">   
   </p>   
   <figcaption style="text-align:center; font-style:italic;">Using segmentation to estimate leaf count and area</figcaption> 
 </figure>
@@ -96,7 +96,7 @@ Using traditional computer vision techniques like K-segmentation, watershed and 
 
 <figure>   
   <p align="center">     
-    <img src="/public/assets/experience/3d-modelling/guass_splat.png" alt="Alt text" height="400" style="display:block; margin:0 auto; padding:5px; box-sizing:border-box;">   
+    <img src="/apbugs/assets/experience/3d-modelling/guass_splat.png" alt="Alt text" height="400" style="display:block; margin:0 auto; padding:5px; box-sizing:border-box;">   
   </p>   
   <figcaption style="text-align:center; font-style:italic;">Automated capture and 3D reconstruction using Guassian splatting</figcaption> 
 </figure>
