@@ -7,7 +7,7 @@ links:
     #   link: 
     # - display_name:
     #   link:
-img: /src/assets/HigherOrLowerGame.png
+img: ../../assets/projects/HigherOrLowerGame.png
 img_alt: The homepage
 tags: [fullstack, collaborative, frontend, backend]
 tools: [Python, Flask, Jinja, SQlite, HTML, Bootstrap, CSS, Linux, Nginx]

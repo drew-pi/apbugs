@@ -7,7 +7,7 @@ links:
     #   link: 
     # - display_name:
     #   link:
-img: /src/assets/MacauProject.png
+img: ../../assets/projects/MacauProject.png
 img_alt: Terminal display at the beginning of the game
 tags: [Java, Bash, Collaborative]
 tools: [Java, Scanner, Bash]

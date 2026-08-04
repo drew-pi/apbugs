@@ -1,0 +1,94 @@
+---
+title: Skipper
+description: A tool that lets you describe a software project in plain language and have AI plan, build, and test it step by step on its own — with safety checks built in so you can review, pause, or step in at any point.
+github: https://github.com/drew-pi/skipper
+links:
+  # - display_name:
+  #   link:
+  # - display_name:
+  #   link:
+img:
+img_alt:
+tags: [backend, frontend, testing, ai development]
+tools:
+  [
+    Claude Code CLI,
+    Codex CLI,
+    Git worktrees,
+    Node.js,
+    SQLite (WAL mode),
+    React 19,
+    Vite,
+    Express,
+    Docker Compose,
+    Playwright,
+    Vitest,
+    WebSockets,
+  ]
+date: 2026
+---
+
+import { Image } from "astro:assets";
+import dashboard from "../../assets/projects/skipper-dash.png";
+import goals from "../../assets/projects/skipper-goals.png";
+
+<figure>
+  <p align="center">
+    <Image
+      densities={[1, 2]}
+      src={dashboard}
+      alt=""
+      height={500}
+      style={{
+        display: "block",
+        margin: "0 auto",
+        padding: "5px",
+        boxSizing: "border-box",
+      }}
+    />
+  </p>
+  <figcaption style={{ textAlign: "center", fontStyle: "italic" }}>
+    View of the main dashboard during execution
+  </figcaption>
+</figure>
+
+### tldr;
+
+Engineered Skipper, an orchestration layer built around the Claude Code CLI that lets an LLM autonomously plan, build, and test entire applications from a single Markdown project description instead of a manually written prompt per step. Designed a goal-based execution pipeline using isolated Git worktrees, branch-per-goal development, automated test and review gates, and version checkpoints to keep multi-hour autonomous development safe, reviewable, and recoverable from failure. Built a persistent React, Express, and SQLite dashboard that surfaces real-time goal status, live model output, and execution logs so the loop stays fully observable and interruptible rather than a black box. The result was a working multi-model system (Claude Haiku, Sonnet, Opus, and Codex) that decomposes a project into an ordered queue of goals and ships working, tested code with minimal manual intervention.
+
+### full story
+
+I built Skipper because I wanted to actually experiment with what people were calling "LLM looping" instead of just reading about it. I've gone through most of college now (I'm a senior as of August 2026) during the exact stretch where AI coding tools went from a novelty to something engineers that I respected like Neetcode, engineers from the Google For Developers video series and even Boris Cherny (the creator of Claude Code) were talking about using almost exclusively. Boris famously said that he uninstalled his IDE because he wasn't hand-writing code anymore. I wasn't at that point, and honestly I still needed to be able to read and review my own code, but I wanted to know: could a loop like that actually build a full application, end to end, on its own?
+
+That question became Skipper - a platform where you point Claude / Codex at a project description and it does the rest. I made a deliberate choice early on not to build a new agent from scratch. Skipper isn't trying to be smarter than the underlying model; it's an orchestration layer around an existing Coding CLI. Its job is to take a broad project description, break it into smaller goals, hand each one enough context to actually get done, and keep the whole process moving without me having to babysit every prompt.
+
+The part I cared about most, though, wasn't the looping itself - it was really that I didn't want to trust the model to get everything right. Giving an LLM unrestricted access to a real repository and letting it run felt like a dangerous idea, so every goal gets developed in its own isolated Git worktree and branch, completely separate from the main working tree. Once Claude finishes a goal, the changes go through a separate automated review pass and the project's own test suite before anything merges into main. If something breaks, Skipper doesn't push forward and build on top of a broken foundation - it stops and asks me what to do.
+
+The project descriptions themselves are just Markdown. Skipper reads the top-level files, merges the requirements, and decomposes everything into an ordered queue of goals, which I can review, reorder, rewrite, or reassign to a different model before execution even starts. That mattered a lot to me - even if I'm not writing every line, I still wanted to be the one steering the project. I also added the idea of "versions" as a bigger checkpoint: if a plan describes multiple stages of an app, Skipper finishes every goal for one version, then stops completely so I can actually run it and decide if it works before the next version is allowed to start. That one decision saved me from watching the loop confidently build hours of features on top of something that looked right to the model but was actually wrong.
+
+<figure>
+  <p align="center">
+    <Image
+      densities={[1, 2]}
+      src={goals}
+      alt=""
+      height={500}
+      style={{
+        display: "block",
+        margin: "0 auto",
+        padding: "5px",
+        boxSizing: "border-box",
+      }}
+    />
+  </p>
+  <figcaption style={{ textAlign: "center", fontStyle: "italic" }}>
+    Reviewing and reordering the decomposed goal queue before letting the loop
+    run for an application that merges messages from all platforms
+  </figcaption>
+</figure>
+
+What surprised me most while building this was how much traditional software engineering an "AI-only" workflow still needs. The LLM can write the implementation, sure, but something still has to manage state, isolate changes, run the tests, persist logs, handle failures gracefully, and decide when work is actually safe to merge - and it has to survive interruptions and usage limits without losing track of what it was doing. The hard part was never just calling Claude repeatedly; it was designing a reliable system around those calls. I built the whole thing as a lightweight React, Express, and SQLite app so all of that state and logging would persist through refreshes or backend restarts, because I never wanted this to feel like a mysterious process running somewhere I couldn't see.
+
+The biggest lesson, though, was that the quality of the plan matters just as much as the quality of the model. A vague requirement produces code that's technically valid but not at all what I actually meant. Clear requirements, small goals, and real acceptance criteria made the loop dramatically more reliable - and it made me realize the developer's role doesn't disappear in a system like this - it just moves: from writing every implementation detail toward defining the problem, setting the constraints, and reviewing the results.
+
+I'm still not ready to uninstall my IDE, and I don't think that was ever really the point. Skipper became less about proving developers are obsolete and more about figuring out how far an LLM can go when it's given a structured process instead of a single prompt - and, fittingly, I ended up using AI to help build the exact tool I now use to delegate more work to AI.

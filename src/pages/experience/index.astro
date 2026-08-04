@@ -1,0 +1,98 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
+import { withBase } from '@lib/withBase';
+
+const experiences = (await getCollection('experience')).sort(
+	(a, b) => Number(b.data.end_date ?? Number.POSITIVE_INFINITY) - Number(a.data.end_date ?? Number.POSITIVE_INFINITY),
+);
+
+const formatDate = (date?: Date | null) =>
+	date?.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+---
+
+<Layout title="Experience | Andrew Piatetsky">
+	<div class="experience-homepage-div">
+		<h1 class="top-text">Previous Experiences</h1>
+
+		{experiences.map((experience: CollectionEntry<'experience'>) => (
+			<div class="experience-container-div">
+				<div class="experience-top-info">
+					<h3 class="experience-title">
+						<b>{experience.data.job_title}</b> at{' '}
+						{experience.data.company_link ? (
+							<a href={experience.data.company_link} target="_blank" rel="noopener noreferrer">{experience.data.company_name}</a>
+						) : (
+							experience.data.company_name
+						)}
+					</h3>
+					<i>
+						{experience.data.location} ({formatDate(experience.data.start_date)} - {formatDate(experience.data.end_date) ?? 'Ongoing'})
+					</i>
+				</div>
+
+				<p>{experience.data.description}</p>
+
+				<div class="experience-links">
+					{experience.data.links?.map(({ display_name, link }) => (
+						<span>[<a href={link} target="_blank" rel="noopener noreferrer">{display_name}</a>]</span>
+					))}
+				</div>
+
+				<a href={withBase(`/experience/${experience.id}`)} class="learn-more-link">Learn More</a>
+			</div>
+		))}
+	</div>
+</Layout>
+
+<style>
+	.experience-homepage-div {
+		align-items: center;
+		gap: 1rem;
+		display: flex;
+		flex-direction: column;
+
+		line-height: 1.5;
+
+		padding-left: 5rem;
+		padding-right: 5rem;
+		padding-bottom: 5rem;
+
+		text-align: left;
+	}
+
+	.experience-homepage-div > div {
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 1.5rem;
+	}
+
+	.experience-homepage-div > div:last-child {
+		border-bottom: none;
+	}
+
+	.experience-container-div {
+		width: 100%;
+	}
+
+	h3.experience-title {
+		padding-bottom: 0.1rem;
+		margin: 0;
+	}
+
+	.experience-top-info {
+		margin-bottom: 0.5rem;
+	}
+
+	.top-text {
+		padding-bottom: 2rem;
+	}
+
+	.learn-more-link {
+		color: black;
+	}
+
+	.experience-links {
+		padding-top: 0.5rem;
+		padding-bottom: 0.3rem;
+	}
+</style>

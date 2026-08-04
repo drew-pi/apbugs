@@ -1,0 +1,67 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import Layout from '@layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const projects = await getCollection('projects');
+
+	return projects.map((project) => ({
+		params: { id: project.id },
+		props: { project },
+	}));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<Layout title={`${project.data?.title ?? 'Project'} | Andrew Piatetsky`}>
+	<div class="project-div">
+		{project.data?.img && (
+			<Image src={project.data.img} alt={project.data?.img_alt ?? ''} class="project-img" />
+		)}
+
+		<div class="matter-info">
+			<h1>{project.data?.title}</h1>
+			<p>Tools used: {project.data?.tools?.join(', ') || 'All of them :)'}</p>
+			<i>{project.data?.date}</i>
+		</div>
+
+		<Content />
+	</div>
+</Layout>
+
+<style>
+	.project-div {
+		display: flex;
+		flex-direction: column;
+		max-width: 80%;
+		margin: 0 auto;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		padding-bottom: 5rem;
+		gap: 1rem;
+	}
+
+	.project-div :global(:is(h2, h3, h4, h5, h6)) {
+		margin-top: 1.5rem;
+	}
+
+	.project-img {
+		max-height: 25rem;
+		max-width: 100%;
+		width: auto;
+		height: auto;
+		align-self: center;
+		padding: 2rem;
+		object-fit: contain;
+	}
+
+	.matter-info {
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+		padding-bottom: 0.5rem;
+	}
+</style>

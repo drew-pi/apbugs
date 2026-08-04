@@ -1,0 +1,42 @@
+---
+import * as blurb from '@content/blurb.md';
+import { Image } from 'astro:assets';
+import headshot from '@assets/headshot.png';
+import { withBase } from '@lib/withBase';
+---
+
+<div class="main-sections main-centered-sections" id="page-1">
+	<div class="intro-div">
+		<div class="intro-text-div">
+			<h1>{blurb.frontmatter.h1}</h1>
+			<h3>{blurb.frontmatter.h3}</h3>
+
+			{(blurb.frontmatter.github || blurb.frontmatter.linkedin) && (
+				<div class="link-icons-div">
+					{blurb.frontmatter.github && (
+						<a href={blurb.frontmatter.github} target="_blank" rel="noopener noreferrer">
+							<img src={withBase('/icons/github.svg')} alt="GitHub" class="link-icons" />
+						</a>
+					)}
+					{blurb.frontmatter.linkedin && (
+						<a href={blurb.frontmatter.linkedin} target="_blank" rel="noopener noreferrer">
+							<img src={withBase('/icons/linkedin.svg')} alt="LinkedIn" class="link-icons" />
+						</a>
+					)}
+				</div>
+			)}
+		</div>
+
+		<Image src={headshot} alt={blurb.frontmatter.img_alt ?? ''} class="blurb-img" />
+	</div>
+
+	<div>
+		<blurb.Content />
+	</div>
+
+	{blurb.frontmatter.email && (
+		<p class="blurb-contact">Feel free to contact me at: <span class="blurb-email">{blurb.frontmatter.email}</span></p>
+	)}
+
+	<a href="#page-2" class="switch-page page-down">↓</a>
+</div>

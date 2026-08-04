@@ -1,0 +1,22 @@
+---
+import * as about from '@content/about.mdx';
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout title="About | Andrew Piatetsky">
+	<div class="about-div">
+		<about.Content />
+	</div>
+</Layout>
+
+<style>
+	.about-div {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		max-width: 60rem;
+		margin: 0 auto;
+		padding: 2rem;
+		line-height: 1.5;
+	}
+</style>

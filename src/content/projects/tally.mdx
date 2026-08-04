@@ -1,0 +1,79 @@
+---
+title: Tally
+description: A private, self-hosted budgeting app that automatically imports and organizes credit card transactions from any statement format, turning a tedious manual process into fast, insightful spending tracking.
+github: https://github.com/drew-pi/tally
+links:
+  # - display_name:
+  #   link:
+  # - display_name:
+  #   link:
+img:
+img_alt:
+tags: [backend, frontend, api, testing]
+tools:
+  [
+    Go,
+    Chi,
+    PostgreSQL,
+    React,
+    TypeScript,
+    Vite,
+    Node.js,
+    npm,
+    Docker,
+    Docker Compose,
+    MinIO,
+    Testcontainers,
+    Playwright,
+    Git,
+    Google Stitch,
+    Claude,
+    Claude Code,
+    HTML,
+    CSS,
+    SQL,
+    S3-compatible storage,
+  ]
+date: 2026
+---
+
+import { Image } from "astro:assets";
+import dashboard from "../../assets/projects/tally-dashboard.png";
+
+<figure>
+  <p align="center">
+    <Image
+      densities={[1, 2]}
+      src={dashboard}
+      alt=""
+      height={500}
+      style={{
+        display: "block",
+        margin: "0 auto",
+        padding: "5px",
+        boxSizing: "border-box",
+      }}
+    />
+  </p>
+  <figcaption style={{ textAlign: "center", fontStyle: "italic" }}>
+    View of the main dashboard for some sample data
+  </figcaption>
+</figure>
+
+### tldr;
+
+Engineered a full-stack personal finance platform in Go and React to replace a manual, error-prone Excel workflow for tracking credit card spending. Built a Chi-based REST API with PostgreSQL for transaction management, configurable CSV import mappings, duplicate detection, and receipt storage via S3-compatible MinIO, backed by Testcontainers-driven integration tests to ensure production-grade reliability. Leveraged an AI-assisted design and development workflow — Google Stitch and Claude for UI design, Claude Code for implementation and test remediation — to ship a functional React/TypeScript frontend in a fraction of the typical development time. The result is a private, self-hosted budgeting tool with a dozen+ features spanning spending analytics, point tracking, and transaction splitting, all while giving me hands-on production experience with Go, the exact language and API patterns used in my day-to-day work at IBM.
+
+### full story
+
+For years, my budgeting system was a single Excel template I found on [YouTube](https://www.youtube.com/watch?v=FvonWSnsSrA), filled out religiously every month after my credit card statement landed. I felt like it was good to go through my transactions and there was something I genuinely liked about the process: going line by line through every transaction, half auditing my own life, half checking for fraud. But the actual mechanics of it were miserable. Every card had its own statement format, so copying data over meant fighting with broken formatting almost every single time. I'm not an Excel person by nature - I'm a computer science guy - so after a few half-hearted attempts at Excel automation, I gave up and decided to just build the thing myself.
+
+The timing lined up well with something else going on in my life. I'd just started at IBM, working on a team building backend APIs in Go, a language I hadn't touched before. I'd worked with APIs plenty, but never in Go, and I wanted a low-stakes way to actually learn it instead of just picking it up passively at work. So this became that project, and I decided to treat it like a real product rather than a throwaway script, even though I was going to be its only user.
+
+I built the backend using Go and Chi, a lightweight routing library, with PostgreSQL as the database layer. What struck me almost immediately was how opinionated Go is - there's usually one clear way to do something, which sounds restrictive but actually made implementing an API specification so much more straightforward than I expected. I also came to appreciate the smaller things: how the compiler catches issues before they ever become bugs, how the linter keeps you honest, and how the whole thing compiles down into one small, efficient binary. Testing ended up being one of the most important parts of the whole project, partly because at IBM I was already deep in API testing and wanted to bring that same discipline home. I spent a lot of time figuring out how to write integration tests that were precise and efficiently scoped rather than just throwing tests at everything, using Testcontainers to spin up real, isolated Postgres instances so I could test against something close to production behavior instead of mocks. I knew that if the data wasn't trustworthy, the whole tool would be useless to me, so I made a point of getting that foundation right before layering on features.
+
+The frontend was actually where I experimented the most, just not in the way you'd expect. I wanted to see how far AI tooling had come for UI work, so I used Google Stitch and Claude to design the interface, then handed that design to Claude Code to actually implement and test it in React and TypeScript. It was honestly one of the most interesting parts of the whole build. I'd give it a spec - the API endpoints I had, the views I wanted - and out would come a rough but functional frontend. Once I had a real test suite in place, the model could iterate against it and fix its own mistakes quickly. The frontend isn't going to win any design awards, but it works, it's usable, and it took a fraction of the time it would have taken me to build from scratch.
+
+What I ended up with goes way beyond a CSV importer at this point. I can configure custom import mappings for each card, preview and review transactions before they land in the database, catch duplicates automatically, attach receipts, split transactions between people, track credit card points, and pull up cash flow and spending trends across categories and vendors. Everything runs locally through Docker Compose, which mattered a lot to me since this is genuinely sensitive financial data - I wanted it private and self-hosted, not sitting in someone else's cloud, and I kept iterating on the feature set based on what I actually needed month to month rather than trying to build everything at once.
+
+More than anything, this project reminded me why I like building things for myself first. I got real, hands-on fluency with a language and toolchain that directly fed back into my work at IBM, I got to sharpen how I think about integration testing, and I got a firsthand look at how capable AI-assisted frontend development has actually become. But the bigger lesson was less technical: the same discipline that makes a team project succeed - prioritizing testing early, being honest about which parts to build myself versus which parts to lean on other tools for, and iterating deliberately instead of trying to do everything at once - matters just as much on a personal project as it does on a professional one. It's still growing, exactly as much as I need it to, one pain point at a time.

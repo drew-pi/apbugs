@@ -7,7 +7,7 @@ links:
     #   link: 
     # - display_name:
     #   link:
-img: /src/assets/DemographicModelling.png
+img: ../../assets/projects/DemographicModelling.png
 img_alt: Chloropleth map showing different NYC demographic information
 tags: [fullstack, collaborative, frontend, backend]
 tools: [Python, Flask, Jinja, JavaScript, Leaflet API, SQlite, HTML, Bootstrap, CSS]

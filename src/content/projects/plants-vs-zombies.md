@@ -7,7 +7,7 @@ links:
     #   link: 
     # - display_name:
     #   link:
-img: /src/assets/PlantsVZombiesProject.png
+img: ../../assets/projects/PlantsVZombiesProject.png
 img_alt: A wave of zombies attacks the pea-shooters
 tags: [Java, Collaborative]
 tools: [Java, Processing]

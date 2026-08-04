@@ -1,0 +1,28 @@
+---
+import * as experience from '@content/experience.md';
+import { withBase } from '@lib/withBase';
+---
+
+<div class="experience-div main-sections" id="page-2">
+	<a href="#page-1" class="switch-page page-up">↑</a>
+
+	<experience.Content />
+
+	<a class="centered show-more" href={withBase('/experience')}>Learn More</a>
+
+	<a href="#page-3" class="switch-page page-down">↓</a>
+</div>
+
+<style>
+	.centered {
+		align-items: center;
+		text-align: center;
+	}
+
+	/* experience.md separates entries with <br>; the site-wide br margin (1rem)
+	   is meant for long-form content and is too much for this tight, one-line-
+	   per-entry summary list */
+	.experience-div :global(br) {
+		margin-top: 0.35rem;
+	}
+</style>
