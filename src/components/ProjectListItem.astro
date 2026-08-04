@@ -1,0 +1,25 @@
+---
+import type { InferEntrySchema } from 'astro:content';
+import { withBase } from '@lib/withBase';
+
+interface Props {
+	slug: string;
+	meta: InferEntrySchema<'projects'>;
+}
+
+const { slug, meta } = Astro.props;
+---
+
+<div class="proj-list-item-div">
+	<i class="date">{meta.date || 1724}</i>
+
+	<p>{meta.title || 'Untitled Project'}</p>
+
+	{meta.github && <span>[<a href={meta.github} target="_blank" rel="noopener noreferrer">GitHub</a>]</span>}
+
+	{meta.links?.map(({ link, display_name }) => (
+		<span>[<a href={link} target="_blank" rel="noopener noreferrer">{display_name}</a>]</span>
+	))}
+
+	<span>[<a href={withBase(`/projects/${slug}`)}>More Info</a>]</span>
+</div>

@@ -1,36 +1,42 @@
 ---
 import * as blurb from '@content/blurb.md';
-
-import "@styles/main.css";
-
-const base = import.meta.env.BASE_URL;
-
+import { Image } from 'astro:assets';
+import headshot from '@assets/headshot.png';
+import { withBase } from '@lib/withBase';
 ---
 
+<div class="main-sections main-centered-sections" id="page-1">
+	<div class="intro-div">
+		<div class="intro-text-div">
+			<h1>{blurb.frontmatter.h1}</h1>
+			<h3>{blurb.frontmatter.h3}</h3>
 
+			{(blurb.frontmatter.github || blurb.frontmatter.linkedin) && (
+				<div class="link-icons-div">
+					{blurb.frontmatter.github && (
+						<a href={blurb.frontmatter.github} target="_blank" rel="noopener noreferrer">
+							<img src={withBase('/icons/github.svg')} alt="GitHub" class="link-icons" />
+						</a>
+					)}
+					{blurb.frontmatter.linkedin && (
+						<a href={blurb.frontmatter.linkedin} target="_blank" rel="noopener noreferrer">
+							<img src={withBase('/icons/linkedin.svg')} alt="LinkedIn" class="link-icons" />
+						</a>
+					)}
+				</div>
+			)}
+		</div>
 
-<div class='main-sections main-centered-sections' id="page-1">
+		<Image src={headshot} alt={blurb.frontmatter.img_alt ?? ''} class="blurb-img" />
+	</div>
 
-    <div class='intro-div'>
-        <div class='intro-text-div'>
-            <h1>{blurb.frontmatter.h1}</h1>
-            <h3>{blurb.frontmatter.h3}</h3>
+	<div>
+		<blurb.Content />
+	</div>
 
-            <div class="link-icons-div">
-                <a href={blurb.frontmatter.github} target="_blank" rel="noopener noreferrer"><img src=`${base}/icons/github.svg` class="link-icons" /></a>
-                <a href={blurb.frontmatter.linkedin} target="_blank" rel="noopener noreferrer"><img src=`${base}/icons/linkedin.svg` class="link-icons" /></a>
-            </div>
-        </div>
+	{blurb.frontmatter.email && (
+		<p class="blurb-contact">Feel free to contact me at: <span class="blurb-email">{blurb.frontmatter.email}</span></p>
+	)}
 
-
-        <img src={`${base}${blurb.frontmatter.img}`} alt={blurb.frontmatter.img_alt} class='blurb-img'/>
-    </div>
-
-    <div>
-        <blurb.Content />
-    </div>
-
-    <p class="blurb-contact">Feel feel to contact me at: <span class="blurb-email">{blurb.frontmatter.email}</span></p>
-
-    <a href="#page-2" class='switch-page page-down'>↓</a>
+	<a href="#page-2" class="switch-page page-down">↓</a>
 </div>

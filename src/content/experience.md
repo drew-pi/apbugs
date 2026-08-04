@@ -1,4 +1,6 @@
-_June 2025_: Joined [Quantori](https://quantori.com/) as a Software Engineer Intern working on biotech LLM agents and validation
+_May 2026_: Joined [IBM](https://www.ibm.com/us-en) as a Software Engineer Intern working on [Concert](https://www.ibm.com/products/concert)
+
+_June 2025_: Joined [Quantori](https://quantori.com/) as a Software Engineer Intern working on a healthcare AI platform for Memorial Sloan Kettering
 
 _Feb 2025_: Joined [Engineers for a Sustainable World](https://esw.engineering.cornell.edu/index.html) (ESW) hydroponics subteam working on agritech and vertical farming as a Software and ML Agritech Engineer
 
